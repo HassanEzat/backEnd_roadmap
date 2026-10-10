@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/exercises/">
+    <Project Path="exercises/Week01.Library/Week01.Library.csproj" />
+  </Folder>
+</Solution>

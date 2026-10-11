@@ -12,8 +12,8 @@ internal class Book
 
         public Book(string title, decimal price)
         {
-            if (string.IsNullOrWhiteSpace(title)) throw new ArgumentException(message:nameof(title));
-            if (price < 0) throw new ArgumentOutOfRangeException(nameof(price)+"cannot be negative");
+            if (string.IsNullOrWhiteSpace(title)) throw new ArgumentException("title can not be null or space",nameof(title));
+            if (price < 0) throw new ArgumentOutOfRangeException(nameof(price), "cannot be negative");
             this.Title = title.Trim();
             this.Price = price;
         }

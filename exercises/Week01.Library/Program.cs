@@ -15,13 +15,13 @@ catch (ArgumentException ex) { Console.WriteLine(ex.Message); }
 Console.WriteLine("=============================");
 //member 
 
-member member = new member(1,"hassan");
+var member = new Member(1,"hassan");
 Console.WriteLine(member.Name);
 Console.WriteLine(member.Id);
 // test if null exprtion is name 
-try { var bad = new member(10,"   "); }
+try { var bad = new Member(10,"   "); }
 catch (ArgumentException ex) { Console.WriteLine(ex.Message); }
 // test price if accept negative numders
-try { var bad = new member(0,"Hassan"); }
+try { var bad = new Member(0,"Hassan"); }
 catch (ArgumentException ex) { Console.WriteLine(ex.Message); }
 

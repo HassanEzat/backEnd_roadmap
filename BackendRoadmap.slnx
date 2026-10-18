@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/exercises/">
-    <Project Path="exercises/Week01.Library/Week01.Library.csproj" />
+    <Project Path="exercises/Week01.Library/Recap.Library.csproj" />
+    <Project Path="weak1/weak1.csproj" Id="4974f48e-8e34-49b7-adef-c969b82f5749" />
   </Folder>
 </Solution>

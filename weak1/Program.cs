@@ -31,7 +31,18 @@
 //}
 #endregion
 #region DAY2
+int[] numbers = new int[1];
 
+// أ
+int first = numbers[0]; // O(1)
 
+// ب
+foreach (var n in numbers) //O(n)
+    Console.WriteLine(n);
+
+// ج
+foreach (var a in numbers)//n
+    foreach (var b in numbers)//n*n
+        Console.WriteLine(a + b);//O(n^2)
 
 #endregion

@@ -1,4 +1,5 @@
-﻿#region DAY1
+﻿using weak1;
+#region DAY1
 //int? n = null; //nullble num
 //Nullable<int> n2 = null;
 
@@ -31,18 +32,60 @@
 //}
 #endregion
 #region DAY2
-int[] numbers = new int[1];
 
-// أ
-int first = numbers[0]; // O(1)
 
-// ب
-foreach (var n in numbers) //O(n)
-    Console.WriteLine(n);
+//int[] numbers = new int[1];
 
-// ج
-foreach (var a in numbers)//n
-    foreach (var b in numbers)//n*n
-        Console.WriteLine(a + b);//O(n^2)
+//// أ
+//int first = numbers[0]; // O(1)
 
+//// ب
+//foreach (var n in numbers) //O(n)
+//    Console.WriteLine(n);
+
+//// ج
+//foreach (var a in numbers)//n
+//    foreach (var b in numbers)//n*n
+//        Console.WriteLine(a + b);//O(n^2)
+
+#endregion
+#region DAY3
+
+Book normal_book = new Book("maintlist","hassan",120);
+//Book page_book = new Book("maintlist", "hassan", -120);//throw ArgumentOutOfRangeException
+//Book title_book = new Book("", "hassan", 120); //throw ArgumentException
+//Book Author_book = new Book("maintlist", "", 120);//throw ArgumentException
+
+
+
+//Console.WriteLine(normal_book.IsBorrowed);//false
+//normal_book.Borrow();
+
+//Console.WriteLine(normal_book.IsBorrowed);//true
+//try
+//{
+//    normal_book.Borrow();// throw InvalidOperationException
+//}
+//catch (InvalidOperationException e) { Console.WriteLine(e); } //Book is already borrowed.
+//normal_book.Return();
+//Console.WriteLine(normal_book.IsBorrowed);//false
+
+//normal_book.IsBorrowed = true; red error by private set
+
+//var info = new Book_info(normal_book.Title, normal_book.Author);
+//Console.WriteLine(info);
+//public record Book_info(string Title,string Author);
+
+//var mem = new Member("hassan", "");
+List<LibraryItem> Items = new List<LibraryItem>();
+Items.Add(normal_book);
+Items.Add(new Magazine("ss rank", 1));
+foreach (var item in Items)
+{
+    Console.WriteLine(item.Title+" "+item.LoanDays);
+}
+/*
+ maintlist 14
+ss rank 5
+ */
 #endregion

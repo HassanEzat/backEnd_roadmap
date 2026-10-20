@@ -28,7 +28,13 @@ STADY A BIG O notation ,space and time complex + git(add,working tree)
 
 "DAY 2"
 
+==================
 
+"DAY 3"
+
+Inheritance polymorphism abstract class and some exersize
+
+"DAY 3"
 
 
 

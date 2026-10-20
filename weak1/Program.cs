@@ -51,7 +51,7 @@
 #endregion
 #region DAY3
 
-Book normal_book = new Book("maintlist","hassan",120);
+//Book normal_book = new Book("maintlist","hassan",120);
 //Book page_book = new Book("maintlist", "hassan", -120);//throw ArgumentOutOfRangeException
 //Book title_book = new Book("", "hassan", 120); //throw ArgumentException
 //Book Author_book = new Book("maintlist", "", 120);//throw ArgumentException
@@ -77,15 +77,15 @@ Book normal_book = new Book("maintlist","hassan",120);
 //public record Book_info(string Title,string Author);
 
 //var mem = new Member("hassan", "");
-List<LibraryItem> Items = new List<LibraryItem>();
-Items.Add(normal_book);
-Items.Add(new Magazine("ss rank", 1));
-foreach (var item in Items)
-{
-    Console.WriteLine(item.Title+" "+item.LoanDays);
-}
+//List<LibraryItem> Items = new List<LibraryItem>();
+//Items.Add(normal_book);
+//Items.Add(new Magazine("ss rank", 1));
+//foreach (var item in Items)
+//{
+//    Console.WriteLine(item.Describe()+" "+item.LoanDays);
+//}
 /*
- maintlist 14
-ss rank 5
+ maintlist hassan 14
+ss rank 1 5
  */
 #endregion

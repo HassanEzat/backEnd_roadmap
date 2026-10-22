@@ -51,7 +51,7 @@
 #endregion
 #region DAY3
 
-//Book normal_book = new Book("maintlist","hassan",120);
+Book normal_book = new Book("maintlist","hassan",120);
 //Book page_book = new Book("maintlist", "hassan", -120);//throw ArgumentOutOfRangeException
 //Book title_book = new Book("", "hassan", 120); //throw ArgumentException
 //Book Author_book = new Book("maintlist", "", 120);//throw ArgumentException
@@ -88,4 +88,10 @@
  maintlist hassan 14
 ss rank 1 5
  */
+IBorrowable x = normal_book;
+x.Borrow();
+Console.WriteLine(x.Author);   // true
+#endregion
+#region DAY4 
+
 #endregion

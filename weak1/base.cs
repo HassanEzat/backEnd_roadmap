@@ -14,7 +14,7 @@ public class Inherit_child:@base {
 }
 
 
-abstract class LibraryItem:IBorrowable
+abstract class LibraryItem: IBorrowable
 {
     public string Title {get;}
     public bool IsBorrowed { get; private set; }

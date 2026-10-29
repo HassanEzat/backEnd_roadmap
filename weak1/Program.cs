@@ -51,7 +51,7 @@
 #endregion
 #region DAY3
 
-Book normal_book = new Book("maintlist","hassan",120);
+Book normal_book = new Book("maintlist","hassan",120, 4);
 //Book page_book = new Book("maintlist", "hassan", -120);//throw ArgumentOutOfRangeException
 //Book title_book = new Book("", "hassan", 120); //throw ArgumentException
 //Book Author_book = new Book("maintlist", "", 120);//throw ArgumentException
@@ -90,8 +90,25 @@ ss rank 1 5
  */
 IBorrowable x = normal_book;
 x.Borrow();
-Console.WriteLine(x.Author);   // true
+//Console.WriteLine(x.Author);   // true
 #endregion
 #region DAY4 
 
+#endregion
+#region DAY5
+//var repo = new Repository<LibraryItem>();
+//repo.Add(normal_book);
+//repo.Add(new Magazine("ss rank", 1));
+
+//foreach (var item in repo.GetAll())
+//    Console.WriteLine(item.Describe());
+var repo = new Repository<LibraryItem>();
+repo.Add(new Book("maintlist", "hassan", 120, 1));
+repo.Add(new Magazine("ss rank", 1, 2));
+
+Console.WriteLine(repo.GetById(2)?.Describe());
+Console.WriteLine(repo.GetById(99)?.Describe()); 
+
+repo.Update(new Magazine("updated magazine", 2, 2));
+repo.GetAll().ToList().ForEach(item => Console.WriteLine(item.Describe()));
 #endregion

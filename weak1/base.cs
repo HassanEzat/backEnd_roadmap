@@ -5,23 +5,18 @@ using System.Xml.Linq;
 
 namespace weak1;
 
-public class @base
+abstract class LibraryItem: IBorrowable , IEntity
 {
-}
-
-public class Inherit_child:@base { 
-
-}
-
-
-abstract class LibraryItem: IBorrowable
-{
-    public string Title {get;}
+    public string Title {get;  }
     public bool IsBorrowed { get; private set; }
-    protected LibraryItem(string title)
+    public int Id { get; }
+    protected LibraryItem(string title,int id)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(title);
         Title = title;
+        if (id <= 0)
+            throw new ArgumentOutOfRangeException(nameof(id), "ID must be positive.");
+        Id = id;
     }
     public virtual int LoanDays => 14;
     public void Borrow()

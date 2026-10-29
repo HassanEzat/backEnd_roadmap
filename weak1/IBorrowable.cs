@@ -19,4 +19,5 @@ public interface IBorrowable
 
 public class Laptop : IBorrowable
 {
+    public void Borrow() { Console.WriteLine(); }
 }

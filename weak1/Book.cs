@@ -8,9 +8,9 @@ internal class Book:LibraryItem
 {
     
     public string Author { get; }
-    public int Pages { get; }
+    public int Pages { get;  }
     
-    public Book(string title, string author, int pages):base(title)
+    public Book(string title, string author, int pages,int id):base(title,id)
     {
         
         ArgumentException.ThrowIfNullOrWhiteSpace(author);

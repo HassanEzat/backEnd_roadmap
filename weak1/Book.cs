@@ -22,5 +22,5 @@ internal class Book:LibraryItem
         Author = author;
     }
 
-    public override string Describe() => $"{Title} {Author}";
+    public override string Describe() => $"B:{Title} {Author} {Id}";
 }

@@ -7,6 +7,7 @@ namespace weak1;
 
 abstract class LibraryItem: IBorrowable , IEntity
 {
+    public static int static_id = 1;
     public string Title {get;  }
     public bool IsBorrowed { get; private set; }
     public int Id { get; }
@@ -17,6 +18,7 @@ abstract class LibraryItem: IBorrowable , IEntity
         if (id <= 0)
             throw new ArgumentOutOfRangeException(nameof(id), "ID must be positive.");
         Id = id;
+        static_id++;
     }
     public virtual int LoanDays => 14;
     public void Borrow()

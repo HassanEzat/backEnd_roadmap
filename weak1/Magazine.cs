@@ -15,5 +15,5 @@ internal class Magazine:LibraryItem
         
     }
     public override int LoanDays => 5;
-    public override string Describe() => $"{Title} {Issue}";
+    public override string Describe() => $"M:{Title} {Issue} {Id}";
 }

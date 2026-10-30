@@ -7,9 +7,9 @@ namespace weak1;
 
 internal class Repository<T> : IRepository<T> where T : IEntity
 {
-    public static int IdCounter = 0;
+    public static int IdCounter = 1;
 
-    Dictionary<int, T> _keyValues = new Dictionary<int, T>();
+    readonly Dictionary<int, T> _keyValues = new Dictionary<int, T>();
     public bool Delete(int id)
     {
         var item = GetById(id);
@@ -25,11 +25,11 @@ internal class Repository<T> : IRepository<T> where T : IEntity
         }
         return false;
     }
-    public void Add(T item) { _keyValues[item.Id] = item    ; }
+    public void Add(T item) { _keyValues[item.Id] = item; IdCounter++; }
     public IEnumerable<T> GetAll() { return _keyValues.Values; }
     public T? GetById(int id)
     {
-        if (_keyValues.TryGetValue(id, out T item))
+        if (_keyValues.TryGetValue(id, out T? item))
         {
             return item;
         }

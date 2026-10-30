@@ -16,10 +16,9 @@ abstract class LibraryItem: IBorrowable , IEntity
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(title);
         Title = title;
-        if (id <= 0)
-            throw new ArgumentOutOfRangeException(nameof(id), "ID must be positive.");
+        if (id < 0)
+            throw new ArgumentOutOfRangeException(nameof(id), "ID must be a non-negative integer.");
         Id = id;
-        Repository<LibraryItem>.IdCounter++;
     }
     public virtual int LoanDays => 14;
     public void Borrow()

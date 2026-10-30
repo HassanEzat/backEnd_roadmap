@@ -129,7 +129,7 @@ invalid:
     Console.WriteLine("9. clear");
     Console.WriteLine("0. Exit");
     Console.Write("Enter your choice: ");
-    int choice = int.Parse(Console.ReadLine());
+    int choice = int.TryParse(Console.ReadLine(), out int parsedChoice) ? parsedChoice : -1;
     Console.WriteLine(space);
     switch (choice)
     {
@@ -184,8 +184,8 @@ void AddBook()
     Console.Write("Enter item author: ");
     string author = Console.ReadLine();
     Console.Write("Enter number of pages: ");
-    int pages = int.Parse(Console.ReadLine());
-    var book = new Book(title, author, pages, LibraryItem.static_id);
+    int pages = int.TryParse(Console.ReadLine(), out int parsedPages) ? parsedPages : 0;
+    var book = new Book(title, author, pages, Repository<LibraryItem>.IdCounter);
     RepoLibraryItems.Add(book);
 }
 void AddMagazine()
@@ -193,8 +193,8 @@ void AddMagazine()
     Console.Write("Enter item title: ");
     string title = Console.ReadLine();
     Console.Write("Enter issue number: ");
-    int issue = int.Parse(Console.ReadLine());
-    var magazine = new Magazine(title,issue, LibraryItem.static_id);
+    int issue = int.TryParse(Console.ReadLine(), out int parsedIssue) ? parsedIssue : 0;
+    var magazine = new Magazine(title,issue, Repository<LibraryItem>.IdCounter);
     RepoLibraryItems.Add(magazine);
 }
 void listAllItems(IRepository<LibraryItem> repo)
@@ -204,7 +204,7 @@ void listAllItems(IRepository<LibraryItem> repo)
 }
 void BorrowItem(IRepository<LibraryItem> repo) {
     Console.WriteLine("enter item id to borrow:");
-    int id = int.Parse(Console.ReadLine());
+    int id = int.TryParse(Console.ReadLine(), out int parsedId) ? parsedId : 0;
     var item = repo.GetById(id);
     if (item != null) {
         try
@@ -222,7 +222,7 @@ void BorrowItem(IRepository<LibraryItem> repo) {
 void ReturnItem(IRepository<LibraryItem> repo)
 {
     Console.WriteLine("enter item id to return:");
-    int id = int.Parse(Console.ReadLine());
+    int id = int.TryParse(Console.ReadLine(), out int parsedId) ? parsedId : 0;
     var item = repo.GetById(id);
     if (item != null)
     {
@@ -241,7 +241,7 @@ void ReturnItem(IRepository<LibraryItem> repo)
 void DeleteItem(IRepository<LibraryItem> repo)
 {
     Console.Write("Enter item id to delete:");
-    int id = int.Parse(Console.ReadLine());
+    int id = int.TryParse(Console.ReadLine(), out int parsedId) ? parsedId : 0;
     if(repo.Delete(id))
         Console.WriteLine("Item deleted successfully.");
     else

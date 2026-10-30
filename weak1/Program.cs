@@ -180,9 +180,9 @@ invalid:
 void AddBook()
 {
     Console.Write("Enter item title: ");
-    string title = Console.ReadLine();
+    string? title = Console.ReadLine();
     Console.Write("Enter item author: ");
-    string author = Console.ReadLine();
+    string? author = Console.ReadLine();
     Console.Write("Enter number of pages: ");
     int pages = int.TryParse(Console.ReadLine(), out int parsedPages) ? parsedPages : 0;
     var book = new Book(title, author, pages, Repository<LibraryItem>.IdCounter);
@@ -191,7 +191,7 @@ void AddBook()
 void AddMagazine()
 {
     Console.Write("Enter item title: ");
-    string title = Console.ReadLine();
+    string? title = Console.ReadLine();
     Console.Write("Enter issue number: ");
     int issue = int.TryParse(Console.ReadLine(), out int parsedIssue) ? parsedIssue : 0;
     var magazine = new Magazine(title,issue, Repository<LibraryItem>.IdCounter);
